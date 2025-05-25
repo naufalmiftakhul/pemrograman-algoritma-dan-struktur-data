@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Matriks Sederhana</title>
+    <link rel="stylesheet" href="projek.css">
+</head>
+<body>
+<header>
+        <a href="nopal.html" class="logo">ALJABAR</a>
+        
+        <nav>
+            <a href="nopal.html" class="active">Home</a>
+            <a href="projek.html">Kalkulator</a>
+            <a href="#">Tutorial</a>
+            <a href="#">Materi</a>
+        </nav>
+</header>
+<div class="container">
+    <h1>Kalkulator Matriks</h1>
+    <div class="matrix-inputs">
+        <div>
+            <h2>Matriks A</h2>
+            <div class="matrix-controls">
+                <button onclick="resizeTable('A', 'addRow')">+ Baris</button>
+                <button onclick="resizeTable('A', 'removeRow')">- Baris</button>
+                <button onclick="resizeTable('A', 'addCol')">+ Kolom</button>
+                <button onclick="resizeTable('A', 'removeCol')">- Kolom</button>
+            </div>
+            <table id="matrixA"></table>
+            <!-- Tombol operasi khusus Matriks A -->
+            <div class="operations operations-a">
+                <button onclick="calculate('transposeA')">Transpose A</button>
+                <button onclick="calculate('detA')">Determinan A</button>
+                <button onclick="calculate('invA')">Invers A</button>
+                <button onclick="calculate('adjA')">Adjoint A</button>
+            </div>
+        </div>
+        <div>
+            <h2>Matriks B</h2>
+            <div class="matrix-controls">
+                <button onclick="resizeTable('B', 'addRow')">+ Baris</button>
+                <button onclick="resizeTable('B', 'removeRow')">- Baris</button>
+                <button onclick="resizeTable('B', 'addCol')">+ Kolom</button>
+                <button onclick="resizeTable('B', 'removeCol')">- Kolom</button>
+            </div>
+            <table id="matrixB"></table>
+            <!-- Tombol operasi khusus Matriks B -->
+            <div class="operations operations-b">
+                <button onclick="calculate('transposeB')">Transpose B</button>
+                <button onclick="calculate('detB')">Determinan B</button>
+                <button onclick="calculate('invB')">Invers B</button>
+                <button onclick="calculate('adjB')">Adjoint B</button>
+            </div>
+        </div>
+    </div>
+    <!-- Operasi gabungan di bawah kedua matriks -->
+    <div class="operations">
+        <button onclick="calculate('add')">Penjumlahan (A + B)</button>
+        <button onclick="calculate('subtract')">Pengurangan (A - B)</button>
+        <button onclick="calculate('multiply')">Perkalian (A × B)</button>
+    </div>
+    <div class="result">
+        <h2>Hasil</h2>
+        <pre id="result"></pre>
+    </div>
+</div>
+<script src="projek.js"></script>
+</body>
+</html>
